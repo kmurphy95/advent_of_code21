@@ -1,10 +1,12 @@
 
 
+# Any time the depth increases from one reading to the next, inc_count increases by one.
+# Do this for every depth.
 def count_increases(depths):
 
     inc_count = 0
     n = 0
-    for value in depths:
+    while n < len(depths):
         if depths[n] > depths[n-1]:
             inc_count += 1
         n += 1
@@ -12,6 +14,7 @@ def count_increases(depths):
     return inc_count
 
 
+# File is raw text, read line-by-line with one depth measurement value per line.
 def read_depths(file):
 
     input_depths = []
